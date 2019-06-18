@@ -1,7 +1,16 @@
 import React, { Component } from 'react';
 import './TodoItem.scss';
 
+//<TodoItem 
+//key={todo.id} done={todo.done} onToggle={() => onToggle(todo.id)} onRemove={() => onRemove(todo.id)}>{todo.text}
+//</TodoItem>
+
 class TodoItem extends Component {
+
+    shouldComponentUpdate(nextProps, nextState) {
+        return this.props.done !== nextProps.done;
+    }
+
     render() {
         const {done, children, onToggle, onRemove } = this.props;
         return (

@@ -1,7 +1,9 @@
 import React from 'react';
 import './TodoInput.scss';
 
-const TodoInput = ({value, onChange, onInsert}) => {
+// <TodoInput onChange={handleChange} onInsert={handleInsert} value={input}/>
+
+const TodoInput = ({onChange, onInsert, value}) => {
     const handleKeyPress = (e) => {
         if (e.key === 'Enter'){
             onInsert();

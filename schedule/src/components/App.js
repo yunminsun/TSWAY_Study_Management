@@ -2,15 +2,16 @@ import React,{ Component } from 'react';
 import PageTemplate from './PageTemplate/PageTemplate';
 import TodoInput from './TodoInput/TodoInput';
 import TodoList from './TodoInput/TodoList';
+const virtualData = new Array(500).fill(0).map((first, index)=> ({id :index, text :`일정${index}`, done :false}));
 
 class App extends Component {
-
     state = {
         input : '',
-        todos : [
-            {id: 0, text:'리액트로 공부하기', done: true},
-            {id: 1, text:'컴포넌트 스타일링 하기', done: false},
-        ]
+        // todos : [
+        //     {id: 0, text:'리액트로 공부하기', done: true},
+        //     {id: 1, text:'컴포넌트 스타일링 하기', done: false},
+        // ]
+        todos : virtualData
     }
     todosIndex = this.state;
     id = 1;
@@ -76,8 +77,8 @@ class App extends Component {
         return (
           <div>
               <PageTemplate>
-              <TodoInput onChange={handleChange} onInsert={handleInsert} value={input}/>
-              <TodoList todos={todos} onToggle={handleToggle} onRemove={handleRemove}/>
+                <TodoInput onChange={handleChange} onInsert={handleInsert} value={input}/>
+                <TodoList todos={todos} onToggle={handleToggle} onRemove={handleRemove}/>
               </PageTemplate>
           </div>
         );
