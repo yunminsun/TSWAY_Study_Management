@@ -6,7 +6,6 @@ const initialState ={
 };
 
 function counter(state = initialState, action) {
-    console.log(`switch 값 : ${action.type}`);
     switch ( action.type ) {
         case types.INCREMENT:
             return {
