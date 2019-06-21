@@ -26,19 +26,21 @@ export function getRandomColor(){
 }
 
 function mapStateToProps(state) {
+    console.log(state);
     return {
-        color : state.color,
-        number : state.number
+        counters : state.counters,
+        color : state.counters[0].color,
+        number : state.counters[0].number
     };
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        onIncrement : () => dispatch(actions.increment()),
-        onDecrement : () => dispatch(actions.decrement()),
-        onSetColor : () => {
+        onIncrement : (index) => dispatch(actions.increment(index)),
+        onDecrement : (index) => dispatch(actions.decrement(index)),
+        onSetColor : (index) => {
             const color = getRandomColor();
-            dispatch(actions.setColor(color));
+            dispatch(actions.setColor(index, color));
         }
     }
 };
