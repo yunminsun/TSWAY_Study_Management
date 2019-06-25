@@ -4,7 +4,6 @@ import Counter from './Counter';
 import './CounterList.css'
 
 const CounterList = ({ counters, onIncrement, onDecrement, onSetColor }) => {
-
     const counterList = counters.map(
         (counter, i) => (
             <Counter key={i} index={i} {...counter}
@@ -28,3 +27,4 @@ Counter.defaultProps = {
 }
 
 export default CounterList;
+

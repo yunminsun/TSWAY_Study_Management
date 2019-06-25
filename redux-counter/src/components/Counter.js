@@ -15,7 +15,6 @@ const Counter = ({number, color, index, onIncrement, onDecrement, onSetColor}) =
 Counter.defaultProps ={
     number : 0,
     color : 'black',
-    index : 0,
     onIncrement : () => console.warn('onIncrement not defined'),
     onDecrement : () => console.warn('onDecrement not defined'),
     onSetColor : () => console.warn('onSetColor not defined')
